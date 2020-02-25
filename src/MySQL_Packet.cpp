@@ -231,7 +231,7 @@ int MySQL_Packet::wait_for_bytes(int bytes_need)
   do
   {
     now = millis();
-    num = client->available();
+    num += client->available();
     if (num < bytes_need)
       delay(MYSQL_WAIT_INTERVAL);
     else
